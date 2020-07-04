@@ -313,6 +313,7 @@ class Story < ApplicationRecord
       :comments_url,
       { :submitter_user => :user },
       { :tags => self.tags.map(&:tag).sort },
+      :user_is_author,
     ]
 
     if options && options[:with_comments]
