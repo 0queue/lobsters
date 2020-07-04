@@ -187,6 +187,10 @@ class User < ApplicationRecord
       h[:keybase_signatures] = self.keybase_signatures
     end
 
+    if self.is_banned?
+      h[:is_banned] = true
+    end
+
     h
   end
 
