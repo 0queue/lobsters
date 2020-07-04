@@ -178,6 +178,10 @@ class Comment < ApplicationRecord
       end
     end
 
+    if self.hat
+      js[:hat] = self.hat.hat
+    end
+
     js
   end
 
